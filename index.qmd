@@ -1,0 +1,18 @@
+---
+title: "My Shiny Python App"
+format: 
+  html:
+    page-layout: full
+server: shiny
+---
+
+
+```{python}
+#| context: server
+import sys
+sys.path.insert(0, "app")
+from app import app
+app
+```
+## About this app
+This is a Shiny Python app embedded in a Quarto document.

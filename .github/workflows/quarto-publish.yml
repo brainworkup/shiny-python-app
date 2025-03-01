@@ -1,0 +1,45 @@
+# NOTE: This workflow is for demonstration purposes only.
+# Shiny apps require a backend server and cannot be hosted on GitHub Pages,
+# which only supports static websites. To deploy a Shiny app, you would need
+# to use a service that supports running Python applications, such as:
+# - Shiny Server
+# - shinyapps.io
+# - Heroku
+# - AWS
+# - Google Cloud Run
+# - Azure App Service
+
+name: Quarto Publish
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v3
+
+      - name: Set up Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.10"
+          cache: "pip"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      # This step will not work for Shiny apps, as they require a backend server
+      - name: Render and Publish
+        uses: quarto-dev/quarto-actions/publish@v2
+        with:
+          target: gh-pages
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -6,17 +6,25 @@ import matplotlib.pyplot as plt
 # Define UI
 app_ui = ui.page_fluid(
     ui.h1("My Shiny Python App"),
-    ui.layout_sidebar(
-        ui.panel_sidebar(
+    ui.layout_columns(
+        ui.column(
+            4,
             ui.input_slider("n", "N", 0, 100, 20),
             ui.input_select(
                 "dataset", "Dataset", choices=["Dataset 1", "Dataset 2", "Dataset 3"]
             ),
             ui.input_checkbox_group(
-                "options", "Options", choices=["Option 1", "Option 2", "Option 3"]
+                "options",
+                "Options",
+                choices=["Option 1", "Option 2", "Option 3"],
+                inline=True,
             ),
         ),
-        ui.panel_main(ui.output_plot("plot"), ui.output_table("table")),
+        ui.column(
+            8,
+            ui.output_plot("plot"),
+            ui.output_table("table"),
+        ),
     ),
 )
 

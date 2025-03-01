@@ -1,0 +1,67 @@
+{
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "---\n",
+        "title: \"My Shiny Python App\"\n",
+        "format: \n",
+        "  html:\n",
+        "    page-layout: full\n",
+        "server: shiny\n",
+        "---\n",
+        "\n",
+        "```html\n",
+        "<!DOCTYPE html>\n",
+        "<html lang=\"en\">\n",
+        "<head>\n",
+        "    <meta charset=\"UTF-8\">\n",
+        "    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n",
+        "</head>\n",
+        "<body>\n",
+        "    <h1>My Shiny Python App</h1>\n",
+        "    \n",
+        "    <!-- Your HTML elements go here -->\n",
+        "</body>\n",
+        "</html>\n",
+        "```"
+      ],
+      "id": "9ad4d706"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "context": "setup"
+      },
+      "source": [
+        "import sys\n",
+        "sys.path.insert(0, \"app\")\n",
+        "from app import app\n",
+        "app"
+      ],
+      "id": "5edadbba",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "## About this app\n",
+        "This is a Shiny Python app embedded in a Quarto document."
+      ],
+      "id": "ec08b3c4"
+    }
+  ],
+  "metadata": {
+    "kernelspec": {
+      "name": "jupyter_env",
+      "language": "python",
+      "display_name": "Python (jupyter_env)",
+      "path": "/Users/joey/Library/Jupyter/kernels/jupyter_env"
+    }
+  },
+  "nbformat": 4,
+  "nbformat_minor": 5
+}

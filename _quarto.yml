@@ -1,0 +1,24 @@
+project:
+  type: website
+  output-dir: _site
+  render:
+    - "!index.qmd" # Exclude index.qmd from rendering
+
+website:
+  title: "shiny-python-app"
+  navbar:
+    left:
+      - href: index.qmd
+      #   text: Home
+      # - about.qmd
+
+format:
+  html:
+    theme:
+      - cosmo
+      - brand
+    css: styles.css
+    toc: true
+    page-layout: full
+    code-tools: true
+    code-fold: true
