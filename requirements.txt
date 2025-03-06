@@ -9,7 +9,7 @@ fonttools==4.56.0
 h11==0.14.0
 htmltools==0.6.0
 idna==3.10
-jinja2==3.1.5
+jinja2==3.1.6
 kiwisolver==1.4.8
 MarkupSafe==3.0.2
 linkify-it-py==2.0.3
